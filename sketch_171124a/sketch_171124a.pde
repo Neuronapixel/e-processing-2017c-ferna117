@@ -8,7 +8,7 @@ void setup() {
 }
 
 void draw() {
-  background(0);
+  background(255);
   mover+=0.01;
   offset = mover;
   
@@ -19,11 +19,11 @@ void draw() {
   for (int i = -1; i< terreno.length-1; i++) {
     line(i*(width/w), height, i*(width/w), terreno[i+1]+height/2);
   }
-  beginShape();
+ /*beginShape();
   vertex(width,height);
   vertex(0,height);
   for (int i =-1;i<terreno.length-1;i++){
   vertex(i*(width/w),terreno[i+1]+height/2);
   endShape();
-  }
+  }*/
 }
