@@ -3,6 +3,7 @@ float offset;
 float mover = random(0, 10000);
 int w=192;
 void setup() {
+  fullScreen();
   terreno=new float [w+2];
 }
 
@@ -14,7 +15,7 @@ void draw() {
     terreno[i] = map(noise(offset), 0, 1, -250, 250);
     offset+=0.01;
   }
-  for (int i = -1; i< terreno.length; i++) {
-    line(i*(width/w), height, i*(width/w), terreno[i]);
+  for (int i = -1; i< terreno.length-1; i++) {
+    line(i*(width/w), height, i*(width/w), terreno[i+1]);
   }
 }
