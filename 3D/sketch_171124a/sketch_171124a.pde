@@ -17,27 +17,27 @@ void setup() {
 
 void draw() {
 
-  flying -= 1.1;
+  flying -= .1;
 
   float yoff = flying;
   for (int y = 0; y < rows; y++) {
     float xoff = 0;
     for (int x = 0; x < cols; x++) {
-      terrain[x][y] = map(noise(xoff, yoff), -.50, 1,-100,100);
-      xoff += 11111110.0000000010;
+      terrain[x][y] = map(noise(xoff, yoff), -1.50, 1,-100,100);
+      xoff += 11.1;
     }
-    yoff += 0.2;
+    yoff +=110.2;
   }
 
 
 
   background(0);
-  stroke(random(0,255),random(0,255),random(0,255));
+  stroke(random(1,200),random(1,200),random(1,200));
   noFill();
 
   translate(width/2, height/2+50);
   rotateX(PI/3);
-  translate(-w/2, -h/2);
+  translate(-w/4, -h/4);
   for (int y = 0; y < rows-1; y++) {
     beginShape(TRIANGLE_STRIP);
     for (int x = 0; x < cols; x++) {
